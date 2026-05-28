@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" role="img" aria-label="RAH360 — Custom remodels, Lexington SC">
+  <!-- Banner background removed — logo floats directly on the dark hero (State Roofing style) -->
+  <g transform="translate(50, 50)" fill="none" stroke="#FAF5EC" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 4 58 L 56 8 L 108 58 L 108 110 L 4 110 Z" stroke-width="4"></path>
+    <path d="M 56 8 L 86 38 L 56 38 Z" fill="#D85E1F" stroke="none"></path>
+    <rect x="40" y="68" width="32" height="42" stroke-width="3"></rect>
+    <rect x="46" y="74" width="20" height="30" stroke-width="2.2"></rect>
+    <circle cx="66" cy="89" r="2" fill="#D85E1F" stroke="none"></circle>
+  </g>
+  <text x="200" y="138" font-family="Outfit, &#39;Arial Black&#39;, sans-serif" font-weight="800" font-size="108" fill="#FAF5EC" letter-spacing="-3">RAH<tspan fill="#B5824A">360</tspan></text>
+  <text x="204" y="178" font-family="Outfit, Arial, sans-serif" font-weight="600" font-size="15" fill="rgba(250,245,236,0.6)" letter-spacing="5">CUSTOM REMODELS · LEXINGTON, SC</text>
+</svg>

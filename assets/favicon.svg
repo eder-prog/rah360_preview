@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="RAH360 favicon">
+  <style>
+    .house { stroke: #1A1A1A; }
+    @media (prefers-color-scheme: dark) {
+      .house { stroke: #FAF5EC; }
+    }
+  </style>
+  <!-- No plate background — house outline adapts color to browser tab theme. -->
+  <g class="house" transform="translate(1.6, 1.6) scale(0.24)" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 4 58 L 56 8 L 108 58 L 108 110 L 4 110 Z" stroke-width="20"></path>
+    <path d="M 56 8 L 86 38 L 56 38 Z" fill="#D85E1F" stroke="none"></path>
+    <rect x="40" y="68" width="32" height="42" stroke-width="14"></rect>
+  </g>
+</svg>
