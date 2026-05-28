@@ -25,7 +25,7 @@ export function Hero() {
       <div className="relative z-[2] max-w-[1200px] mx-auto px-4 md:px-8 reveal">
         <h1
           id="hero-h1"
-          className="font-display font-black text-cream mb-6 max-w-[24ch] leading-[0.98] tracking-tightest"
+          className="font-display font-semibold text-cream mb-6 max-w-[24ch] leading-[0.98] tracking-tightest"
           style={{ fontSize: "clamp(36px, 8vw, 72px)" }}
         >
           Custom kitchens, baths, and full home remodels. <span className="it">Done right,</span> here in the Midlands.
