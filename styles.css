@@ -458,7 +458,7 @@ p { margin: 0; }
 .hero-inner { position: relative; z-index: 1; }
 .hero-h1 {
   font-family: var(--font-display);
-  font-weight: var(--fw-black);
+  font-weight: var(--fw-semibold);
   font-size: clamp(36px, 8vw, 72px);
   line-height: 0.98;
   letter-spacing: -0.035em;
