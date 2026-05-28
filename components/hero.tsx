@@ -9,7 +9,7 @@ export function Hero() {
       {/* Layer 1: photo */}
       <div
         role="img"
-        aria-label="Custom raised-panel kitchen remodel by RAH360 in the South Carolina Midlands"
+        aria-label="Custom raised-panel kitchen remodel by RAH360 in Pelion, South Carolina"
         className="absolute inset-0 z-0 bg-cover bg-center saturate-[1.15] contrast-[1.04]"
         style={{ backgroundImage: "url('/assets/hero-bg.jpg')" }}
       />
@@ -28,7 +28,7 @@ export function Hero() {
           className="font-display font-semibold text-cream mb-6 max-w-[24ch] leading-[0.98] tracking-tightest"
           style={{ fontSize: "clamp(36px, 8vw, 72px)" }}
         >
-          Custom kitchens, baths, and full home remodels. <span className="it">Done right,</span> here in the Midlands.
+          Custom kitchens, baths, and full home remodels. <span className="it">Done right,</span> here in Pelion.
         </h1>
         <p className="text-lg md:text-xl text-cream/90 mb-10 max-w-[52ch] leading-normal">
           Free in-person estimate. Joel comes out personally. No pressure, no template kitchens.
@@ -48,7 +48,7 @@ export function Hero() {
           </a>
         </div>
         <p className="text-sm text-cream/85 tracking-wider">
-          Same crew, start to finish · Free in-person estimate · Built in the Midlands
+          Same crew, start to finish · Free in-person estimate · Built in Pelion
         </p>
       </div>
     </section>

@@ -32,7 +32,7 @@ export function About() {
 
         <div className="reveal relative aspect-square rounded-xl overflow-hidden shadow-md">
           <Image src="/assets/joel-portrait.jpg"
-            alt="Joel Gonzalez, owner of RAH360, on a remodel job site in the South Carolina Midlands"
+            alt="Joel Gonzalez, owner of RAH360, on a remodel job site in Pelion, South Carolina"
             fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
         </div>
       </div>

@@ -17,7 +17,7 @@ export function SiteFooter() {
             <Image src="/assets/logo/logo-full-light.svg" alt="RAH360 · Custom remodels · Lexington, SC" width={800} height={220}
               className="h-12 w-auto" />
           </Link>
-          <p className="text-cream/70 text-sm max-w-[30ch] mt-2 mb-5">RAH360. Owner-led custom remodels. SC Midlands.</p>
+          <p className="text-cream/70 text-sm max-w-[30ch] mt-2 mb-5">RAH360. Owner-led custom remodels. Pelion, SC.</p>
           <div className="flex gap-3">
             <a href="https://facebook.com/rah360kitchensandbaths" rel="noopener" aria-label="Follow RAH360 on Facebook"
               className="inline-flex items-center justify-center w-10 h-10 border border-oak rounded-full text-cream hover:bg-oak hover:text-ink transition-colors">
@@ -42,7 +42,7 @@ export function SiteFooter() {
 
         <div>
           <h4 className="font-mono font-semibold text-[11px] uppercase tracking-[0.12em] text-oak mb-2">Service Area</h4>
-          <p className="text-cream/85 text-sm leading-normal m-0">South Carolina Midlands</p>
+          <p className="text-cream/85 text-sm leading-normal m-0">Pelion, South Carolina</p>
           <p className="text-cream/85 text-sm leading-normal m-0">Lexington · Richland · Aiken · Saluda</p>
         </div>
 

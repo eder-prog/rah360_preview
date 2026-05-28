@@ -16,7 +16,7 @@ export function Testimonials() {
           <h2 id="testimonials-h2" className="section-h">
             What <span className="it">neighbors</span> are saying.
           </h2>
-          <p className="section-sub">Real homeowners, real projects, real Midlands homes. References available on request.</p>
+          <p className="section-sub">Real homeowners, real projects, real Pelion homes. References available on request.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">

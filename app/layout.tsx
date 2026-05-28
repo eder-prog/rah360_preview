@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "RAH360 · Custom kitchens, baths & remodels · SC Midlands",
+  title: "RAH360 · Custom kitchens, baths & remodels · Pelion, SC",
   description:
-    "Owner-led custom kitchen, bath, and home remodels in the South Carolina Midlands. Free in-person estimate. Joel comes out personally.",
+    "Owner-led custom kitchen, bath, and home remodels in Pelion, South Carolina. Free in-person estimate. Joel comes out personally.",
   openGraph: {
     type: "website",
     title: "RAH360 · Custom kitchens, baths & remodels",
-    description: "Owner-led custom remodels in the SC Midlands. Free in-person estimate, no pressure.",
-    images: [{ url: "/assets/og-source.png", alt: "Custom kitchens, baths & remodels. Done right, here in the Midlands." }],
+    description: "Owner-led custom remodels in the Pelion, SC. Free in-person estimate, no pressure.",
+    images: [{ url: "/assets/og-source.png", alt: "Custom kitchens, baths & remodels. Done right, here in Pelion." }],
     url: "https://rah360.com/",
   },
   twitter: { card: "summary_large_image" },
