@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const stats = [
   { label: "Owner", value: "Joel Gonzalez" },
-  { label: "Service area", value: "Lexington · Richland · Aiken · Saluda" },
+  { label: "Based in", value: "Pelion, SC" },
   { label: "Tenure", value: "5+ years" },
   { label: "Crew", value: "Same, start to finish" },
 ];
