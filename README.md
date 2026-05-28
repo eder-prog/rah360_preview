@@ -1,128 +1,141 @@
-# RAH360 — Landing Page
+# RAH360 — Landing (Next.js · v0-ready)
 
 Static landing page for **RAH360 Construction** — owner-led custom kitchen, bath, and home remodels in the South Carolina Midlands. Owner: Joel Gonzalez · (832) 954-7349 · rah360construction@gmail.com.
 
-Built by the **landing-builder** Opensquad squad — run `2026-05-27-165000`. Brand system from the **brand-creator** squad — run `2026-05-27-153500`.
+Built by the **landing-builder** Opensquad squad — run `2026-05-27-165000`. Brand from **brand-creator** run `2026-05-27-153500`.
 
 ## Stack
 
-Vanilla HTML + CSS + JS. Zero framework. Deploy to any static host. No build step.
+- **Next.js 15** App Router + React 19
+- **TypeScript** strict
+- **Tailwind CSS 3.4** with custom RAH360 brand tokens
+- **shadcn/ui** primitives (Radix UI for Accordion + Checkbox + Select)
+- **Lucide React** icons
+- **No external state / no DB / no auth** — pure marketing site
 
-- **HTML:** Semantic single-page (12 sections)
-- **CSS:** Tokens from `brands/rah360/` (W3C Design Tokens) + responsive (4 breakpoints)
-- **JS:** Vanilla — header glass theme detection, nav drawer, form validation, lightbox, scroll reveal
-- **Logo:** 4 SVG variants (light/dark × full/icon) + favicon SVG with `prefers-color-scheme`
-- **Fonts:** Google Fonts CDN (Outfit + Inter + Fraunces italic + JetBrains Mono)
-- **Photos:** Real RAH360 project shots (6 gallery slots + hero + Joel portrait)
+## Branches
 
-## Deploy to Vercel
+- `main` — vanilla HTML/CSS/JS (deploy-ready static, no build step)
+- `nextjs` — this branch (Next.js + Tailwind + shadcn, v0.app-importable)
 
-### Option 1 — Connect via GitHub (Recommended, auto-deploys on push)
-
-1. Push this folder to a GitHub repo (see Git section below)
-2. Go to https://vercel.com/new
-3. Import the GitHub repo
-4. Vercel auto-detects it as a static site — no build settings needed
-5. Click **Deploy**
-6. Live in ~30 seconds at `https://<repo-name>.vercel.app`
-
-### Option 2 — Drag-drop via Vercel CLI
+## Quick start
 
 ```bash
-cd path/to/dist
-npx vercel --prod
+npm install
+npm run dev
+# Open http://localhost:3000
 ```
 
-First run prompts to log in + link the project.
+## Deploy
 
-### Option 3 — Drag-drop via Vercel web UI
+### Vercel (recommended)
 
-Drag the entire `dist/` folder onto https://vercel.com/new — Vercel uploads + deploys in ~10 seconds.
+1. Push to GitHub
+2. https://vercel.com/new → Import `eder-prog/rah360_preview` (this branch)
+3. Vercel auto-detects Next.js — no config needed
+4. Click **Deploy** — live in ~60s
 
-## Vercel configuration
+### v0.app
 
-`vercel.json` already includes:
+This branch is v0.app-importable. Open https://v0.app, click "Import from GitHub", paste this repo URL with branch `nextjs`. v0 will recognize the Next.js + Tailwind + shadcn stack and let you iterate visually.
 
-- `cleanUrls: true` — `/privacy` instead of `/privacy.html` (auto-rewrites)
-- Aggressive caching headers for `/assets/*` and static files
-- Security headers (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`)
+## Project structure
 
-## Domain
+```
+.
+├── app/
+│   ├── layout.tsx          Root layout with Google Fonts + metadata
+│   ├── page.tsx            Landing page (composes all components)
+│   ├── globals.css         Tailwind + RAH360 base layer + scroll-reveal
+│   ├── privacy/page.tsx    Privacy stub
+│   ├── terms/page.tsx      Terms stub
+│   └── api/leads/route.ts  Form submission endpoint (placeholder)
+├── components/
+│   ├── site-header.tsx     Adaptive header (glass + logo morph + bounce CTA)
+│   ├── hero.tsx            Photo hero with overlay + dual CTA
+│   ├── services.tsx        4 service cards with hover effects
+│   ├── gallery.tsx         6 real project photos + lightbox modal
+│   ├── process.tsx         4-step process (asym grid)
+│   ├── about.tsx           Joel portrait + stat strip
+│   ├── testimonials.tsx    3 testimonial cards (Fraunces italic quotes)
+│   ├── mid-cta.tsx         Mid-page conversion block
+│   ├── faq.tsx             8-item Radix Accordion
+│   ├── estimate-form.tsx   A2P-compliant form with validation
+│   ├── site-footer.tsx     4-column dark footer + radial warmth
+│   ├── mobile-sticky-cta.tsx  Bottom-fixed click-to-call (mobile)
+│   └── scroll-reveal.tsx   IntersectionObserver provider
+├── lib/
+│   └── utils.ts            cn() helper for class merging
+├── public/
+│   ├── favicon.svg         Adaptive favicon (prefers-color-scheme)
+│   └── assets/
+│       ├── hero-bg.jpg     Hero background
+│       ├── joel-portrait.jpg   Owner portrait
+│       ├── og-source.png   Logo for OG card composition
+│       ├── gallery/        6 real project photos
+│       └── logo/           5 SVG logo variants
+├── tailwind.config.ts      RAH360 brand tokens + animations
+├── tsconfig.json
+├── next.config.mjs
+├── postcss.config.mjs
+├── components.json         shadcn config
+├── vercel.json             Security headers
+├── package.json
+└── README.md
+```
 
-After Vercel deploys, add the production domain in Vercel dashboard → Project → Settings → Domains:
+## Brand tokens
 
-- Recommended: `rah360.com` (verify availability first)
-- Alternatives: `rah360remodel.com`, `rah360sc.com`
+All colors + typography exposed as Tailwind utilities (`bg-ink`, `text-cream`, `bg-burnt`, `font-display`, etc.). See `tailwind.config.ts`.
 
-Then update these in `index.html`:
-- `<meta property="og:url" content="https://rah360.com/">` (line 15)
-- `<link rel="canonical">` (add to `<head>`)
+| Token | Hex | Use |
+|---|---|---|
+| `ink` | `#1A1A1A` | Primary text, dark sections |
+| `cream` | `#FAF5EC` | Primary background |
+| `burnt` | `#D85E1F` | Primary CTA only |
+| `burnt-hover` | `#C24E12` | CTA hover |
+| `oak` | `#B5824A` | Secondary accent, dividers |
+| `stone` | `#D9CFC0` | Section variant bg |
+| `forest` | `#3E4C3A` | Trust marks, success, link hover |
+| `charcoal` | `#404040` | Secondary text |
+
+Fonts: Outfit (display) + Inter (body) + Fraunces italic (accent) + JetBrains Mono (eyebrow/code) — all from Google Fonts CDN.
 
 ## Pre-production checklist
 
-See `assets/README.md` for the full asset inventory. Before going live:
-
-- [ ] **Validate copy with Joel** — years in business (writing "5+ years"), project counts, exact service-area counties, timeframes per project type
-- [ ] **Replace 3 testimonials** — currently sample copy, mark as `[VALIDATE]` until real quotes collected (with permission)
-- [ ] **Generate `og-card.jpg`** — 1200×630 from `assets/og-source.png` per Brand Guide spec
-- [ ] **Form backend** — `/api/leads` is a placeholder. Wire to a real CRM/email forwarder (HubSpot, Pipedrive, SendGrid, or Vercel serverless function)
-- [ ] **Create Privacy + Terms pages** — `/privacy` and `/terms` linked in footer + form. Use existing GS Privacy as template.
-- [ ] **Google Business Profile** — Joel needs to create one for RAH360 (critical for local SEO)
-- [ ] **Lighthouse audit** — target Performance 90+, Accessibility 95+, SEO 95+
-
-## Local dev
-
-```bash
-# Option A — Python
-python3 -m http.server 8000 --directory dist
-
-# Option B — npx serve
-cd dist && npx serve
-
-# Option C — VS Code Live Server
-# Right-click index.html → Open with Live Server
-```
+- [ ] Validate copy with Joel (years, project count, counties, timeframes)
+- [ ] Replace 3 sample testimonials with real client quotes
+- [ ] Generate 1200×630 OG card from `public/assets/og-source.png`
+- [ ] Wire `/api/leads` route to real CRM / email
+- [ ] Flesh out `app/privacy/page.tsx` and `app/terms/page.tsx`
+- [ ] Add custom domain in Vercel Dashboard → Settings → Domains
+- [ ] Update `app/layout.tsx` `openGraph.url` with real domain
+- [ ] Create Google Business Profile (critical for local SEO)
+- [ ] Lighthouse audit — target 90+ all categories
 
 ## Form backend
 
-The estimate form (`#estimate-form`) submits to `/api/leads` (placeholder). On local preview where this endpoint doesn't exist, the form still shows the success state so you can validate the flow visually.
+`/api/leads` (in `app/api/leads/route.ts`) is a placeholder that logs and returns 200. Wire it up before going live. Options:
 
-To wire it up:
+```ts
+// Example: Resend email
+import { Resend } from "resend";
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-1. **Cheapest path** — Vercel Serverless Function (`api/leads.js` at repo root, outside `dist/`). Receives JSON payload, forwards to email/CRM. ~10 lines of code.
-2. **CRM-native** — HubSpot, Pipedrive, Salesforce — change the form action to their endpoint with their hidden fields.
-3. **No-code** — Formspree, Basin, Web3Forms — change `action` attribute to their submit URL.
-
-The form already collects:
-- name, phone (US-formatted), email
-- project_type (Kitchen / Bathroom / Patio Cover / Whole-Home / Other)
-- message (optional)
-- sms_consent (optional, TCPA-compliant)
-- contact_consent (required)
-- submitted_at (ISO timestamp)
-
-## Bundle size
-
-```
-index.html       ~34 KB
-styles.css       ~32 KB
-script.js        ~10 KB
-favicon.svg      ~0.5 KB
-assets/logo/*.svg  ~4 KB (4 variants)
-assets/hero-bg.jpg  ~320 KB
-assets/gallery/  ~1.5 MB (6 photos)
-assets/joel-portrait.jpg  ~1.3 MB
-TOTAL            ~3.2 MB (uncompressed)
+export async function POST(request: Request) {
+  const data = await request.json();
+  await resend.emails.send({
+    from: "leads@rah360.com",
+    to: "rah360construction@gmail.com",
+    subject: `New estimate request from ${data.name}`,
+    text: JSON.stringify(data, null, 2),
+  });
+  return NextResponse.json({ ok: true });
+}
 ```
 
-Gzipped HTML+CSS+JS+SVG: ~25 KB total. Lighthouse-friendly.
+## Squad run
 
-## Brand reference
-
-- `brands/rah360/` — design tokens, components spec, voice/microcopy doc, brand brief
-- `brands/rah360/claude-design-brand-guide.html` — 8-section visual style guide from Claude Design
-
-## Squad run history
-
-- **brand-creator** run `2026-05-27-153500` — shipped `brands/rah360/`
-- **landing-builder** run `2026-05-27-165000` — shipped this folder
+- **brand-creator** run `2026-05-27-153500` → `brands/rah360/`
+- **landing-builder** run `2026-05-27-165000` → this folder
+- **Vanilla version** lives on branch `main` of the same repo
